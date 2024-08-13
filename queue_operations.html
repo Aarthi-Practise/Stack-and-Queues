@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Queue{
+        constructor(){
+            this.queue_array=[];
+        }
+        append(value){
+            this.queue_array.push(value);
+            return this.queue_array;
+        }
+        remove(){
+            this.queue_array.shift();
+            return this.queue_array;
+        }
+        front(){
+            return this.queue_array[0];
+        }
+        rear(){
+            return this.queue_array[this.queue_array.length-1];
+        }
+    }
+    const queue=new Queue;
+    queue.append(20);
+    queue.append(10);
+    queue.append(30);
+    queue.append(50);
+    queue.append(120);
+    queue.append(210);
+    queue.remove();
+    console.log(queue);
+    console.log(queue.front());
+</script>
+</html>

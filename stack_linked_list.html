@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Node{
+        constructor (value){
+            this.value=value;
+            this.next=null;
+        }
+    }
+    class Linked_List{
+        constructor(){
+            this.head=null;
+            this.tail=null;
+            this.size=0;
+        }
+        push(value){
+            const newNode=new Node(value);
+            if(this.size==0){
+                this.head=newNode;
+                this.tail=newNode;
+                this.size++;
+                return this;
+            }
+            this.tail.next=newNode;
+            this.tail=newNode;
+            this.size++;
+            return this;
+        }
+        pop(){
+            if(this.size==0){
+                console.log("ITEM CANNOT BE DELETED");
+            }
+            let currentNode=this.head;
+            let newTail;
+            while(currentNode.next){
+                 newTail=currentNode;
+                 currentNode=currentNode.next;
+            }
+            newTail.next=null;
+            this.tail=newTail;
+            this.size--;
+            return this;
+        }
+        peek(){
+            console.log(this.tail);
+        }
+    }
+    
+    const llobj=new Linked_List();
+    llobj.push(10);
+    llobj.push(20);
+    llobj.push(30);
+    llobj.push(40);
+    llobj.push(50);
+    llobj.push(60);
+    console.log(llobj);
+    llobj.pop();
+    console.log(llobj);
+    llobj.peek();         
+</script>
+</html>

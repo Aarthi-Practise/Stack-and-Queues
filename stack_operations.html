@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Stack{
+        constructor(){
+            this.stack=[];
+        }
+        push(value){
+            this.stack.push(value);
+            // var peek=this.stack[this.stack.length-1];
+            console.log(this.stack);
+            // console.log("peek="+peek);
+        }
+        pop(){
+            if(this.stack.length==0){
+                console.log("stack is empty");
+            }
+            else{
+                this.stack.pop();
+                // if(this.stack.length==0){
+                //     console.log("stack is empty");
+                // }
+                // else{
+                //     var peek=this.stack[this.stack.length-1];
+                //     console.log(this.stack);
+                //     console.log("peek="+peek);
+                // }
+                console.log(this.stack);
+            }
+        }
+        peek(){
+            var peek=this.stack[this.stack.length-1];
+            console.log("peek="+peek);            
+        }
+    }
+    const obj=new Stack;
+    obj.push(10);
+    obj.push(20);
+    obj.pop();
+    obj.pop();
+    obj.pop();
+    
+</script>
+</html>

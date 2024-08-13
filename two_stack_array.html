@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // class Stack2{
+    //     constructor(){
+    //         this.array=[[],[]];
+    //     }
+    //     pushIntoStack1(value){
+    //         this.array[0].push(value);
+    //         return this.array;
+    //     }
+    //     popFromStack1(){
+    //         if(this.array[0].length==0){
+    //             return "stack1 is empty"
+    //         }
+    //         else{
+    //             this.array[0].pop();
+    //             return this.array;
+    //         }
+    //     }
+    //     pushIntoStack2(value){
+    //         this.array[1].push(value);
+    //         return this.array;
+    //     }
+    //     popFromStack2(){
+    //         if(this.array[1].length==0){
+    //             return "stack2 is empty"
+    //         }
+    //         else{
+    //             this.array[1].pop();
+    //             return this.array;
+    //         }
+    //     }
+    // }
+
+
+
+
+    // STACK 1-SIZE =>5 ; STACK 2-SIZE =>6
+    class Stack{
+        constructor(){
+            this.array=[];
+            this.array2=[];
+            this.size1=0;
+            this.size2=0;
+        }
+        pushIntoStack1(value){
+            this.array2=[];
+            this.size1++;
+            if(this.array.length>9){
+                return "Stack1 is full";
+            }
+            else{
+                this.array.unshift(value);
+                for(var i=0 ;i<this.size1;i++){
+                    this.array2.push(this.array[i]);
+                }
+                return "stack 1="+this.array2;
+            }
+        }
+        pushIntoStack2(value){
+            this.array2=[];
+            this.size2++;
+            if(this.array.length>9){
+                return "Stack2 is full";
+            }
+            else{
+                this.array.push(value);
+                for(var i=this.size1;i<this.array.length;i++){
+                    this.array2.push(this.array[i]);
+                }
+                return "stack 2="+this.array2;
+            }
+        }
+        popFromStack1(){
+            if(this.size1>-1){
+                this.array.shift();
+                this.size1--;
+                return this.array;
+            }
+            else{
+               return "stack1 is empty";
+            }
+        }
+        popFromStack2(){
+            if(this.size2>-1){
+                this.array.pop();
+                this.size2--;
+                return this.array;
+            }
+            else{
+                return"stack2 is empty";
+            }
+        }
+        peekFromStack1(){
+            console.log(this.size1,this.size2)
+            return this.array[0];
+        }
+        peekFromStack2(){
+            console.log(this.size1,this.size2)
+            return this.array[this.array[this.array.length-1]];
+        }
+    }
+    const obj=new Stack;
+    console.log(obj.pushIntoStack1(10));
+    console.log(obj.pushIntoStack1(20))
+    console.log(obj.pushIntoStack1(30))
+    console.log(obj.pushIntoStack1(40))
+    console.log(obj.pushIntoStack2(50));
+    console.log(obj.pushIntoStack2(60));
+    console.log(obj.pushIntoStack2(70));
+    console.log(obj.pushIntoStack2(80));
+    console.log(obj.pushIntoStack2(90));
+    console.log(obj.pushIntoStack2(100));
+    console.log(obj.popFromStack1());
+    console.log(obj.pushIntoStack1(110));
+    console.log(obj.pushIntoStack1(40));
+    console.log(obj.pushIntoStack1(210));
+</script>
+</html>
